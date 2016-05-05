@@ -32,7 +32,11 @@ public class Mobile {
 			return left.getWeight() + right.getWeight();
 	}  
 	
-	// Return the maximum height of the mobile
+	// B1
+	/**
+	 * Returns the height of a mobile.
+	 * @return height of mobile
+	 */
 	public int getHeight() {
 	    // check if base case
 		if (isSimple())
@@ -41,7 +45,10 @@ public class Mobile {
 		return 1 + Math.max(left.getHeight(), right.getHeight());
 	}  
 	
-	// Print the leaves of the mobile
+	// B2
+	/**
+	 * Prints the leaves of the mobile.
+	 */
 	public void flatten()  {
 		// check if base case
 		if (isSimple())
@@ -54,7 +61,10 @@ public class Mobile {
 		
 	}  
 	
-//	Print a structured view of the mobile
+//	B3
+	/**
+	 * Prints a structured view of the mobile.
+	 */
 	public void prettyPrint() {
 	      // check if base case
 		if (isSimple())
@@ -79,7 +89,12 @@ public class Mobile {
 				rightLength * right.getWeight() ) < eps;
 	}   
 
-// Determine if two mobiles are equal	
+// B4
+	/**
+	 * Determines if two mobiles are equal.
+	 * @param rhs mobile 
+	 * @return true or false
+	 */
 	public boolean equals(  Mobile rhs ) {
 	    // create variable for comparison purposes
 	    final double eps = 0.000001;
@@ -95,7 +110,10 @@ public class Mobile {
 	    		
 	}
 	
-//	Return a clone of this mobile
+//	B5
+	/**
+	 * Returns a clone of this mobile.
+	 */
 	public Mobile clone() {
          // check if base case
          if (isSimple())
@@ -105,7 +123,10 @@ public class Mobile {
          return new Mobile(left.clone(), leftLength, right.clone(), rightLength);
 	}
 	
-// Change this mobile to its mirror image
+// B3
+	/**
+	 * Change this mobile to its mirror image.
+	 */
 	public void mirror() {
          // check if base case
 		if (isSimple())
@@ -159,7 +180,7 @@ public class Mobile {
 			System.out.println("Not equal!");
 
 		if ( c == m )
-			System.out.println("Identical!");	// They should definately not!
+			System.out.println("Identical!");	// They should definitely not!
 		else
 			System.out.println("Not identical!");
 		
