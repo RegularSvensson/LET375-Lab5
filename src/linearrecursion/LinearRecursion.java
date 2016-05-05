@@ -7,6 +7,11 @@ import java.io.IOException;
  */
 public class LinearRecursion {
 // A.1
+	/**
+	 * Reads user input of a string of chars
+	 * and prints it in reverse.
+	 * @throws IOException
+	 */
     public static void reverseInput() throws IOException {
         // read input from user and store in char
     	char c = (char) System.in.read();
@@ -20,6 +25,13 @@ public class LinearRecursion {
     }
         
 // A.2
+    /**
+     * Multiplies two integers and
+     * returns the answer.
+     * @param m integer #1
+     * @param n integer #2
+     * @return n * m
+     */
     public static int multiply(int m,int n) {
         // check if base case 
         if (m == 0) 
@@ -35,6 +47,12 @@ public class LinearRecursion {
     } 
     
 // A.3
+    /**
+     * Counts the number of digits of an integer
+     * and returns the answer.
+     * @param n integer
+     * @return number of digits
+     */
     public static int countDigits(int n) {
         // check if base case 
         if (n < 10)
@@ -65,6 +83,11 @@ public class LinearRecursion {
     }
 
 // A.4
+/**
+ * Returns a copy of a list.
+ * @param l list
+ * @return copy of l
+ */
  public static ListNode copy( ListNode l ) {
      // check if base case
 	 if (l == null)
@@ -74,12 +97,19 @@ public class LinearRecursion {
  }
     
 // A.5  
+/**
+ * Returns a list that contains the elements
+ * of two other lists.
+ * @param l1 list #1
+ * @param l2 list #2
+ * @return list with elements from l1 and l2
+ */
  public static ListNode append( ListNode l1, ListNode l2 ) {
-        // check if base case
-	 	if (l1 == null)
-	 		return copy(l2);
-	 	// return call to append recursively
-	 	return cons(l1.element, append(l1.next, l2));
+    // check if base case
+ 	if (l1 == null)
+ 		return copy(l2);
+ 	// return call to append recursively
+ 	return cons(l1.element, append(l1.next, l2));
  }
     
 /**********************************************
