@@ -7,8 +7,16 @@ import java.io.IOException;
  */
 public class LinearRecursion {
 // A.1
-    public static void reverseInput() {
-        // toDo 
+    public static void reverseInput() throws IOException {
+        // read input from user and store in char
+    	char c = (char) System.in.read();
+    	// check if char is not a new line
+    	if (c != '\n') {
+    		// call reverseIntput method recursively
+        	reverseInput();
+    		// print char recursively
+        	System.out.print(c);
+    	}
     }
         
 // A.2
