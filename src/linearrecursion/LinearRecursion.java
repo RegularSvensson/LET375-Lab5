@@ -26,9 +26,11 @@ public class LinearRecursion {
         	return 0;
         // check if m > 0
         else if (m > 0) 
+        	// return call to multiply recursively
         	return n + multiply(m - 1, n);
         // else, m < 0
         else 
+        	// return call to multiply recursively
         	return - n + multiply(m + 1, n);
     } 
     
