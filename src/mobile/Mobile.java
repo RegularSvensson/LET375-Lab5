@@ -1,5 +1,4 @@
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+package mobile;
 
 public class Mobile {
 	
@@ -35,8 +34,11 @@ public class Mobile {
 	
 	// Return the maximum height of the mobile
 	public int getHeight() {
-	    // ...
-		return 0;
+	    // check if base case
+		if (isSimple())
+			return 1;
+		// return call to getHeight recursively
+		return 1 + Math.max(left.getHeight(), right.getHeight());
 	}  
 	
 	// Print the leaves of the mobile
@@ -86,7 +88,7 @@ public class Mobile {
 	
 		System.out.println("Total mass: " + m.getWeight() );
 
-		//System.out.println("Height:     " + m.getHeight() );
+		System.out.println("Height:     " + m.getHeight() );
 		//m.flatten(); System.out.println();
 		//m.prettyPrint(); System.out.println();
 		if ( m.isBalanced() )
