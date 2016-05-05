@@ -81,8 +81,19 @@ public class Mobile {
 
 // Determine if two mobiles are equal	
 	public boolean equals(  Mobile rhs ) {
-	    // ...
-	    return false;
+	    // create variable for comparison purposes
+	    final double eps = 0.000001;
+	    
+	    // check if base case
+	    if (isSimple())
+	    	// return 
+	    	return (eps > Math.abs(weight - rhs.weight)) && rhs.isSimple();
+	    // return calls to equals recursively
+	    return (right.equals(rhs.right) && 
+	    		left.equals(rhs.left)) && 
+	    		(eps > Math.abs(rightLength - rhs.rightLength)) &&
+	    		(eps > Math.abs(leftLength - rhs.leftLength));
+	    		
 	}
 	
 //	Return a clone of this mobile
