@@ -86,7 +86,6 @@ public class Mobile {
 	    
 	    // check if base case
 	    if (isSimple())
-	    	// return 
 	    	return (eps > Math.abs(weight - rhs.weight)) && rhs.isSimple();
 	    // return calls to equals recursively
 	    return (right.equals(rhs.right) && 
@@ -98,8 +97,12 @@ public class Mobile {
 	
 //	Return a clone of this mobile
 	public Mobile clone() {
-         // ...
-         return null;
+         // check if base case
+         if (isSimple())
+        	 // return a new Mobile with the same weight
+        	 return new Mobile(weight);
+         // return call to clone recursively
+         return new Mobile(left.clone(), leftLength, right.clone(), rightLength);
 	}
 	
 // Change this mobile to its mirror image
