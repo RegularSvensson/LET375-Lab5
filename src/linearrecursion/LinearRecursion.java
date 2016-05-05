@@ -34,8 +34,11 @@ public class LinearRecursion {
     
 // A.3
     public static int countDigits(int n) {
-        // toDo 
-        return 0;
+        // check if base case 
+        if (n < 10)
+        	return 1;
+        // return call to countDigits recursively
+        return 1 + countDigits(n / 10);
     }
            
     public static ListNode cons( int element, ListNode l ) {
