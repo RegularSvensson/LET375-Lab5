@@ -93,7 +93,23 @@ public class Mobile {
 	
 // Change this mobile to its mirror image
 	public void mirror() {
-         // ...
+         // check if base case
+		if (isSimple())
+			// do nothing
+			return;
+		else {
+			// mirror submobiles
+			left.mirror();
+			right.mirror();
+			
+			// switch right and left
+			Mobile mobile = right;
+			float length = rightLength;
+			right = left;
+			rightLength = leftLength;
+			left = mobile;
+			leftLength = length;
+		}
 	}
 	
 	private boolean isSimple() { 
@@ -114,7 +130,7 @@ public class Mobile {
 			System.out.println("Balanced!");
 		else
 			System.out.println("Not balanced!");
-/*		
+
 		Mobile m22 = new Mobile( new Mobile( 2 ), 6,  new Mobile( 3 ), 4 ),
 		       m3 = new Mobile( m1, 10, m22, 2 );
 		if ( m.equals(m3) )
@@ -137,6 +153,6 @@ public class Mobile {
 		m.prettyPrint(); System.out.println();
 		m.mirror();
 		m.prettyPrint(); System.out.println();
-*/
+
 	}
 }
