@@ -43,12 +43,31 @@ public class Mobile {
 	
 	// Print the leaves of the mobile
 	public void flatten()  {
-	      // ...
+		// check if base case
+		if (isSimple())
+			System.out.print(weight + " ");
+		// else, call flatten recursively
+		else {
+			left.flatten();
+			right.flatten();
+		}
+		
 	}  
 	
 //	Print a structured view of the mobile
 	public void prettyPrint() {
-	      // ...
+	      // check if base case
+		if (isSimple())
+			System.out.print(weight + " ");
+		// else, print and call prettyPrint recursively
+		else {
+			System.out.print("[");
+			left.prettyPrint();
+			System.out.print("," + leftLength + ", ");
+			right.prettyPrint();
+			System.out.print(", " + rightLength);
+			System.out.print("]");
+		}
 	}
 	
 // Determine if the mobile is balanced
@@ -89,8 +108,8 @@ public class Mobile {
 		System.out.println("Total mass: " + m.getWeight() );
 
 		System.out.println("Height:     " + m.getHeight() );
-		//m.flatten(); System.out.println();
-		//m.prettyPrint(); System.out.println();
+		m.flatten(); System.out.println();
+		m.prettyPrint(); System.out.println();
 		if ( m.isBalanced() )
 			System.out.println("Balanced!");
 		else
