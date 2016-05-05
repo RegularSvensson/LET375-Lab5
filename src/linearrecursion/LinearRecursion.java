@@ -1,3 +1,5 @@
+package linearrecursion;
+
 import java.io.IOException;
 /**
  * @author NN
