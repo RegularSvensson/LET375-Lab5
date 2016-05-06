@@ -12,5 +12,6 @@ public class FlakeDB {
 		// Add your favourite flake objects here ...
 		theFlakes.put("Concave Koch", new ConcaveKoch());
 		theFlakes.put("Penta", new Penta());
+		theFlakes.put("Sierpinski", new Sierpinski());
 	}
 }
