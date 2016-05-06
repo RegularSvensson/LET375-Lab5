@@ -11,8 +11,11 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
-#Initial project files
+# Initial project files
 *.pkg
 *.ctxt
 *.bluej
 *.TXT
+
+# Other
+.settings
