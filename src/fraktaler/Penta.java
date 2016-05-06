@@ -1,5 +1,8 @@
 package fraktaler;
-
+/**
+ * @author Mona Khoshoi, Elias Svensson
+ * @version 2016-05-04
+ */
 public class Penta extends Flake {
 
 	@Override

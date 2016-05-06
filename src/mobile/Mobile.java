@@ -1,5 +1,8 @@
 package mobile;
-
+/**
+ * @author Mona Khoshoi, Elias Svensson
+ * @version 2016-05-04
+ */
 public class Mobile {
 	
 	private enum MobileType { SIMPLE, COMPOSITE }

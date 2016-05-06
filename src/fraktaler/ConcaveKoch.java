@@ -1,5 +1,8 @@
 package fraktaler;
-
+/**
+ * @author Mona Khoshoi, Elias Svensson
+ * @version 2016-05-04
+ */
 public class ConcaveKoch extends Flake {
 	public void draw(Turtle turtle,int n,double size) {
 		this.turtle = turtle;

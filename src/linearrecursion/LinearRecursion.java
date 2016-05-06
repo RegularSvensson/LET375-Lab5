@@ -2,8 +2,8 @@ package linearrecursion;
 
 import java.io.IOException;
 /**
- * @author NN
- * @version 2012-05-
+ * @author NN & Mona Khoshoi, Elias Svensson
+ * @version 2012-05- & 2016-05-04
  */
 public class LinearRecursion {
 // A.1
