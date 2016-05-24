@@ -12,16 +12,22 @@ public class LinearRecursion {
 	 * and prints it in reverse.
 	 * @throws IOException
 	 */
-    public static void reverseInput() throws IOException {
+    public static void reverseInput() {
         // read input from user and store in char
-    	char c = (char) System.in.read();
-    	// check if char is not a new line
-    	if (c != '\n') {
-    		// call reverseIntput method recursively
-        	reverseInput();
-    		// print char recursively
-        	System.out.print(c);
-    	}
+    	char c;
+		try {
+			c = (char) System.in.read();
+			// check if char is not a new line
+	    	if (c != '\n') {
+	    		// call reverseIntput method recursively
+	        	reverseInput();
+	    		// print char recursively
+	        	System.out.print(c);
+	    	}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
         
 // A.2

@@ -58,6 +58,8 @@ public class Mobile {
 			System.out.print(weight + " ");
 		// else, call flatten recursively
 		else {
+			// note: switch order of these statements to
+			// switch order of prints
 			left.flatten();
 			right.flatten();
 		}
@@ -69,16 +71,16 @@ public class Mobile {
 	 * Prints a structured view of the mobile.
 	 */
 	public void prettyPrint() {
-	      // check if base case
+	    // check if base case
 		if (isSimple())
-			System.out.print(weight + " ");
+			System.out.printf("(%.0f)", weight);
 		// else, print and call prettyPrint recursively
 		else {
 			System.out.print("[");
-			left.prettyPrint();
-			System.out.print("," + leftLength + ", ");
 			right.prettyPrint();
-			System.out.print(", " + rightLength);
+			System.out.printf(",%.0f,", rightLength);
+			left.prettyPrint();
+			System.out.printf(",%.0f", leftLength);
 			System.out.print("]");
 		}
 	}
@@ -98,19 +100,25 @@ public class Mobile {
 	 * @param rhs mobile 
 	 * @return true or false
 	 */
-	public boolean equals(  Mobile rhs ) {
-	    // create variable for comparison purposes
-	    final double eps = 0.000001;
-	    
-	    // check if base case
-	    if (isSimple())
-	    	return (eps > Math.abs(weight - rhs.weight)) && rhs.isSimple();
-	    // return calls to equals recursively
-	    return (right.equals(rhs.right) && 
-	    		left.equals(rhs.left)) && 
-	    		(eps > Math.abs(rightLength - rhs.rightLength)) &&
-	    		(eps > Math.abs(leftLength - rhs.leftLength));
-	    		
+	public boolean equals(Object rhs) {
+		if (rhs == null || getClass() != rhs.getClass())
+			return false;
+		else {
+			// Create temporary mobile
+			Mobile tmp = (Mobile) rhs;
+			
+			// create variable for comparison purposes
+		    final double eps = 0.000001;
+		    
+		    // check if base case
+		    if (isSimple())
+		    	return (eps > Math.abs(weight - tmp.weight)) && tmp.isSimple();
+		    // return calls to equals recursively
+		    return (right.equals(tmp.right) && 
+		    		left.equals(tmp.left)) && 
+		    		(eps > Math.abs(rightLength - tmp.rightLength)) &&
+		    		(eps > Math.abs(leftLength - tmp.leftLength));
+		}
 	}
 	
 //	B5
